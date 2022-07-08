@@ -1,10 +1,14 @@
 import uvicorn
 
-from typing import Union
+from typing import Union, Iterable, List
 from enum import Enum
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+
+
+def toStrings(nums: Iterable[int]) -> List[str]:
+    return [str(x) for x in nums]
 
 class ModelName(str, Enum):
     alexnet = "alexnet"
